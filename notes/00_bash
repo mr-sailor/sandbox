@@ -1,0 +1,41 @@
+BASH: 
+rm -rf my_folder
+
+pip install -r requirements-dev.txt
+
+python3 -m venv /path/to/env
+source ./env/bin/activate
+deactivate 
+
+python3 -m pip install --upgrade pip 
+
+tar -xzvf myfile.tar.gz
+
+
+export ENV_FILE=$(pwd)/.env.development
+
+ssh-keygen -t ed25519 -C "email@server.com"
+scp -i /path/to/your/key/<public-key>.pem -r ./folder ubuntu@<ec2-ip>:/home/ubuntu/folder
+
+
+echo "10.103.167.0 spark-kubernetes" | sudo tee -a /etc/hosts
+echo "10.104.246.64 spark-master" | sudo tee -a /etc/hosts
+/var/log/pods/
+
+find /folder/ -name "pattern"
+
+
+
+PORTS:
+    lsof -i:5001
+
+    netsat -lnt 
+    sudo fuser -k <port>/tcp
+
+ps -ef | grep <app-name>
+sudo kill -9 502
+
+
+
+apt update
+apt install vim

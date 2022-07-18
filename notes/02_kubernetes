@@ -1,0 +1,16 @@
+*** K8s ***
+    kubectl get pods|namespaces|deployments|...
+    kubectl get pods -w             <-- LIVE 
+    kubectl logs deployment/my-dep-1
+
+    kubectl exec -it -n membership-funnel pod-1234 /bin/bash
+    kubectl apply -f config-file.yaml 
+    kubect delete -f config-file.yaml 
+
+    services: clusterIP, NodePort, LoadBalancer
+
+    kubectl cp -n membership-funnel ./data_writer membership-funnel-5756b8cf-qxg2j:/data_writer
+
+
+
+kubectl get pods -n membership
