@@ -1,4 +1,8 @@
-VSCODE
-F2                  =   refactor everywhere 
-F12                 =   see where fun is called
-CMD + SHIFT + L     =   edit all selected
+# refactor everywhere 
+F2
+
+# see where fun is called
+F12 
+
+# edit all selected
+CMD + SHIFT + L

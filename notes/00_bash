@@ -1,41 +1,36 @@
-BASH: 
+# rm folder
 rm -rf my_folder
 
-pip install -r requirements-dev.txt
-
-python3 -m venv /path/to/env
-source ./env/bin/activate
-deactivate 
-
-python3 -m pip install --upgrade pip 
-
+# tar file 
 tar -xzvf myfile.tar.gz
 
+# python venv
+python3.9 -m venv /path/to/env
+source ./env/bin/activate
+pip install -r requirements-dev.txt
+deactivate 
 
-export ENV_FILE=$(pwd)/.env.development
+# add env var
+export ENV_FILE=$(pwd)/some-file
 
+# create ssh key
 ssh-keygen -t ed25519 -C "email@server.com"
+
+# copy files through ssh 
 scp -i /path/to/your/key/<public-key>.pem -r ./folder ubuntu@<ec2-ip>:/home/ubuntu/folder
 
+# add hosts 
+echo "10.104.40.21 my-host" | sudo tee -a /etc/hosts
 
-echo "10.103.167.0 spark-kubernetes" | sudo tee -a /etc/hosts
-echo "10.104.246.64 spark-master" | sudo tee -a /etc/hosts
-/var/log/pods/
-
+# find foler
 find /folder/ -name "pattern"
 
 
-
-PORTS:
-    lsof -i:5001
-
-    netsat -lnt 
-    sudo fuser -k <port>/tcp
-
-ps -ef | grep <app-name>
+# find processes on port 6001
+lsof -i:6001
+netsat -lnt 
+sudo fuser -k <port>/tcp
 sudo kill -9 502
 
-
-
-apt update
-apt install vim
+# find processes by app name 
+ps -ef | grep <app-name>

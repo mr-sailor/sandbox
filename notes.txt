@@ -1,0 +1,155 @@
+
+=========================
+00_BASH
+
+
+# rm folder
+rm -rf my_folder
+
+# tar file 
+tar -xzvf myfile.tar.gz
+
+# python venv
+python3.9 -m venv /path/to/env
+source ./env/bin/activate
+pip install -r requirements-dev.txt
+deactivate 
+
+# add env var
+export ENV_FILE=$(pwd)/some-file
+
+# create ssh key
+ssh-keygen -t ed25519 -C "email@server.com"
+
+# copy files through ssh 
+scp -i /path/to/your/key/<public-key>.pem -r ./folder ubuntu@<ec2-ip>:/home/ubuntu/folder
+
+# add hosts 
+echo "10.104.40.21 my-host" | sudo tee -a /etc/hosts
+
+# find foler
+find /folder/ -name "pattern"
+
+
+# find processes on port 6001
+lsof -i:6001
+netsat -lnt 
+sudo fuser -k <port>/tcp
+sudo kill -9 502
+
+# find processes by app name 
+ps -ef | grep <app-name>
+=========================
+01_DOCKER
+
+
+# build image using Dockerfile-local file
+docker build -t my-cont -f Dockerfile-local .
+
+# spin container
+docker run my-cont
+docker run -p 5000:81 --name webapp1 nginx1.11
+docker exec -it web-app-1 /bin/bash 
+
+# stop container
+docker stop 0sdf90sdf8s09
+
+# get all containers
+docker ps (-a)
+
+# remove all containers
+docker rm $(docker ps -a -q)
+# remove all iamges
+docker image rm $(docker images -a -q)
+=========================
+02_KUBERNETES
+
+
+# get pods with watch option
+kubectl get pods -w
+
+# get logs
+kubectl logs deployment/my-dep-1
+
+# log into pod
+kubectl exec -it -n my-namespace my-pod-id /bin/bash
+
+# declare file
+kubectl apply -f config-file.yaml 
+
+# delete file
+kubect delete -f config-file.yaml 
+
+# copy files from local to 
+kubectl cp -n my-namespace ./folder/locally my-pod-name:/folder/in/pod
+=========================
+03_GIT
+
+
+# switch to my-branch
+git checkout
+git checkout -b my-new-branch 
+# creates MyFeature branch off dev branch 
+
+git checkout -b myFeature dev   
+# pull code from master to current branch
+git merge origin/master         
+
+# force current branch to master state (erease all from current branch)
+git reset --hard master
+# force push changes       
+git push -f my-branch   
+
+# push changes to remote
+git push -u origin remote-branch
+
+# git add & commit
+git add <files>
+git commit -m <message>
+
+# git fetch meta
+git fetch --all
+# get rid of deleted branches 
+git fetch --prune              
+
+# stash
+git stash
+git stash pop 
+
+# pull changes from master 
+git pull origin master
+=========================
+04_VSCODE
+
+
+# refactor everywhere 
+F2
+
+# see where fun is called
+F12 
+
+# edit all selected
+CMD + SHIFT + L
+=========================
+05_AWS_CLI
+
+
+# S3
+aws s3 ls
+aws s3 ls s3://name-of-s3/folder
+aws s3 XX rm s3://name-of-s3/folder/ --recursive
+
+# EC2
+aws ec2 start-instances --instance-ids i-082def0ed9fb2ba5
+
+
+
+=========================
+06_MARKDOWN
+
+
+# subscript
+<sub>*</sub>    
+
+# empty line 
+<br/>           

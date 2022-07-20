@@ -1,7 +1,9 @@
+# S3
 aws s3 ls
 aws s3 ls s3://name-of-s3/folder
-
 aws s3 XX rm s3://name-of-s3/folder/ --recursive
-aws ec2 start-instances --instance-ids i-082def0ed9fb2ba50
+
+# EC2
+aws ec2 start-instances --instance-ids i-082def0ed9fb2ba5
 
 

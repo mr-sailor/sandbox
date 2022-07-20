@@ -1,35 +1,32 @@
-GIT:
+# switch to my-branch
+git checkout
+git checkout -b my-new-branch 
+# creates MyFeature branch off dev branch 
 
-git checkout <my-branch>        switch to <my-branch>
-git merge origin/master         pull code from master to current branch
+git checkout -b myFeature dev   
+# pull code from master to current branch
+git merge origin/master         
 
-git reset --hard master         bring current branch to MASTER STATE
-git push -f feature/D2C-XXXX    force push it 
+# force current branch to master state (erease all from current branch)
+git reset --hard master
+# force push changes       
+git push -f my-branch   
 
-git checkout -b <branch>        completely new branch 
-git push -u origin <branch>
+# push changes to remote
+git push -u origin remote-branch
 
+# git add & commit
 git add <files>
 git commit -m <message>
 
+# git fetch meta
 git fetch --all
-git fetch --prune              get rid of deleted branches 
+# get rid of deleted branches 
+git fetch --prune              
 
+# stash
 git stash
 git stash pop 
 
-git checkout -b myFeature dev   Creates MyFeature branch off devfeature
-
-git reset --merge
-
-git pull origin master          pull changes from master 
-
-git reset --hard b619554
-git reset --hard master         erease all from current branch 
-git pull origin master 
-git push -u origin feature/XXX --force  push 
-
-
-git push -u origin XXX --force 
-
-git checkout -b MY-NEW=BRANCH OTHER-BRANCH
+# pull changes from master 
+git pull origin master

@@ -1,16 +1,17 @@
-*** K8s ***
-    kubectl get pods|namespaces|deployments|...
-    kubectl get pods -w             <-- LIVE 
-    kubectl logs deployment/my-dep-1
+# get pods with watch option
+kubectl get pods -w
 
-    kubectl exec -it -n membership-funnel pod-1234 /bin/bash
-    kubectl apply -f config-file.yaml 
-    kubect delete -f config-file.yaml 
+# get logs
+kubectl logs deployment/my-dep-1
 
-    services: clusterIP, NodePort, LoadBalancer
+# log into pod
+kubectl exec -it -n my-namespace my-pod-id /bin/bash
 
-    kubectl cp -n membership-funnel ./data_writer membership-funnel-5756b8cf-qxg2j:/data_writer
+# declare file
+kubectl apply -f config-file.yaml 
 
+# delete file
+kubect delete -f config-file.yaml 
 
-
-kubectl get pods -n membership
+# copy files from local to 
+kubectl cp -n my-namespace ./folder/locally my-pod-name:/folder/in/pod

@@ -1,17 +1,18 @@
-*** DOCKER ***
-    docker build -t my-cont -f Dockerfile-local .
+# build image using Dockerfile-local file
+docker build -t my-cont -f Dockerfile-local .
 
-    docker run my-cont
-    docker run -p 5000:81 --name webapp1 nginx1.11
-    docker exec -it web-app-1 /bin/bash 
+# spin container
+docker run my-cont
+docker run -p 5000:81 --name webapp1 nginx1.11
+docker exec -it web-app-1 /bin/bash 
 
-    docker stop 0sdf90sdf8s09
+# stop container
+docker stop 0sdf90sdf8s09
 
-    docker ps (-a)
+# get all containers
+docker ps (-a)
 
-    docker rm $(docker ps -a -q)    <-- rm all
-    docker image rm $(docker images -a -q)
-
-    docker top 00a9sd787a9sd        <-- processes in container 
-
-    ps aux | grep "application-name-here"
+# remove all containers
+docker rm $(docker ps -a -q)
+# remove all iamges
+docker image rm $(docker images -a -q)
